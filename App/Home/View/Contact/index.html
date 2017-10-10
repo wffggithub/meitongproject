@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>{$Think.CONFIG.title}-联系我们</title>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{$Think.CONFIG.description}" />
+    <meta name="keywords" content="{$Think.CONFIG.keywords}" />
+
+    <script src="__PUBLIC__/templets/js/jquery.js"></script>
+    <script src="__PUBLIC__/templets/js/common.js"></script>
+    <script src="__PUBLIC__/templets/js/jquery-1.11.0.min.js"></script>
+
+    <include file="Public/head" />
+    <!--Top-->
+
+    <div class="pc-nb" ><img src="{$bannerPC['image_path']}"></div>
+    <div class="som-nb"><img src="{$bannerPC['image_path']}"></div>
+
+    <div class="web-1000-100 ma50">
+        <div class="w-lr">
+            <div class="ak-nr"><span style="font-size:18px;">{$info['company']}</span><br />
+                <div>{$info['addr']}</div>
+                <div>商务热线：{$info['phone']}</div>
+            </div>
+            <div class="ne-ly">在线留言</div>
+            <!---->
+            <form name="myform" action="{:U('Message/index')}" enctype="multipart/form-data" method="post" onSubmit="return(form_c());">
+                <input type="hidden" name="action" value="post" />
+                <input type="hidden" name="diyid" value="1" />
+                <input type="hidden" name="do" value="2" />
+                <div class="in-cn-r-2"><input type="text" maxlength="255" class="upfile" name='name' id='name' value="" placeholder="姓名"></div>
+                <div class="in-cn-r-2"><input type="text" maxlength="255" class="upfile" name='phone' id='tel' value="" onkeyup="ta(this)" onBlur="sq(this)"
+                        maxlength="11" placeholder="电话"></div>
+                <div class="in-cn-r-3"><textarea rows="5" name='message' id='neirong' placeholder="您想咨询的内容。"></textarea></div>
+                <div class="in-cn-r-4"><span class="for-l"><input type="submit" value="提交留言" name="submit1"></span>
+                    <div class="clear"></div>
+                </div>
+            </form>
+
+        </div>
+        <div class="w-ll" style="margin-bottom:20px;">
+            <!--map-->
+           <!-- <iframe src="__PUBLIC__/templets/map.html" frameborder="0" scrolling="no" id="test" height="100%" width="100%"></iframe>-->
+            {$info['content']}
+            <script type="text/javascript">
+                function reinitIframe() {
+                    var iframe = document.getElementById("test");
+                    try {
+                        var bHeight = iframe.contentWindow.document.body.scrollHeight;
+                        var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                        var height = Math.max(bHeight, dHeight);
+                        iframe.height = height;
+                        console.log(height);
+                    } catch (ex) { }
+                }
+                window.setInterval("reinitIframe()", 200);
+            </script>
+            <!--map-->
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!--footer-->
+    <include file="Public/footer" />
+    <!--End footer-->
+
+
+    <script type="text/javascript">
+        $(function () {
+            imgScroll.rolling({
+                name: 'ng-li',
+                width: '100%',
+                height: '30px',
+                direction: 'top',
+                speed: 30,
+                addcss: true
+            });
+        });
+    </script>
+
+    <!-- common js -->
+    <script type="text/javascript">
+        function sq(obj) {
+            var val = $(obj).val().length;
+            if (val < 11) {
+                alert("至少输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+
+        function ta(obj) {
+            var val = $(obj).val().length;
+            if (val > 11) {
+                alert("至多输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+    </script>
+    <!-- common js -->
+
+
+</body>
+
+</html>

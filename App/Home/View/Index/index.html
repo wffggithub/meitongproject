@@ -1,0 +1,375 @@
+<!DOCTYPE HTML __PUBLIC__ "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>{$Think.CONFIG.title}-首页</title>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{$Think.CONFIG.description}" />
+    <meta name="keywords" content="{$Think.CONFIG.keywords}" />
+
+    <script src="__PUBLIC__/templets/js/jquery.js"></script>
+    <script src="__PUBLIC__/templets/js/common.js"></script>
+    <script src="__PUBLIC__/templets/js/jquery-1.11.0.min.js"></script>
+
+    <!-- 仅首页 -->
+    <link href="__PUBLIC__/templets/css/bootstrap.css" rel="stylesheet" />
+    <link href="__PUBLIC__/templets/css/flexslider.css" rel="stylesheet" />
+    <script src="__PUBLIC__/templets/js/jquery.flexslider-min.js"></script>
+    <script src="__PUBLIC__/templets/js/custom.js"></script>
+    <script src="__PUBLIC__/templets/js/index.js"></script>
+
+    <include file="Public/head" />
+
+    <!--Banner-->
+    <div class="web-banner">
+        <div>
+            <section class="topspace blackshadow bg-white">
+                <div class="flexslider ind-pic" id="pca">
+                    <ul class="slides">
+                        <li class="hero"><img src="{$bannerPC['image_path']}" alt="美彤集合店" class="thumb" /></li>
+                    </ul>
+                </div>
+                <div class="flexslider ind-pic" id="soma">
+                    <ul class="slides">
+                        <li class="hero"><img src="{$bannerM['image_path']}" alt="美彤集合店" class="thumb" /></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--Banner-->
+
+    <!--hot-->
+    <div class="web-1005">
+        <div class="wthr uy1" id="in-1">
+            <a href="{:U('Latest/index')}">
+                <div class="wthr-1">
+                    <div class="wthr-1-1">NEWS</div>
+                    <div class="wthr-1-2">最新资讯</div>
+                    <div class="wthr-1-3">The whole category of fast fashion brand leader</div>
+                    <div class="wthr-1-4">&nbsp;</div>
+                    <div class="wthr-1-5">查看更多 >></div>
+                </div>
+                <div class="wthr-2">
+                    <img src="__PUBLIC__/templets/UploadFiles/index/hot2.jpg" alt="美彤集合店">
+                    <div class="w-sj st"><span class="icon-down-dir"></span></div>
+                    <div class="w-sj st2"><span class="icon-right-dir"></span></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="wthr uy2">
+            <a href="{:U('About/index')}">
+                <div class="wthr-2">
+                    <img src="__PUBLIC__/templets/UploadFiles/index/hot4.jpg" alt="美彤集合店">
+                    <div class="w-sj sb"><span class="icon-up-dir"></span></div>
+                    <div class="w-sj sb2"><span class="icon-left-dir"></span></div>
+                </div>
+                <div class="wthr-1">
+                    <div class="wthr-1-1">brand</div>
+                    <div class="wthr-1-2">品牌简介</div>
+                    <div class="wthr-1-3">Women's brand, China's famous brand, was founded in 2005</div>
+                    <div class="wthr-1-4">&nbsp;</div>
+                    <div class="wthr-1-5">查看更多 >></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="wthr uy1">
+            <a href="{:U('Join/index')}">
+                <div class="wthr-1">
+                    <div class="wthr-1-1">star</div>
+                    <div class="wthr-1-2">招商加盟</div>
+                    <div class="wthr-1-3">China merchants to join
+                    </div>
+                    <div class="wthr-1-4">&nbsp;</div>
+                    <div class="wthr-1-5">查看更多 >></div>
+                </div>
+                <div class="wthr-2">
+                    <img src="__PUBLIC__/templets/UploadFiles/index/hot6.jpg" alt="美彤内衣加盟">
+                    <div class="w-sj st"><span class="icon-down-dir"></span></div>
+                    <div class="w-sj st2"><span class="icon-right-dir"></span></div>
+                </div>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--hot-->
+
+    <div class="ad1">
+
+        <img src="__PUBLIC__/templets/img/ad-1.png" alt="美彤内衣官网">
+    </div>
+
+
+    <div class="in-80"></div>
+
+
+    <div class="swiper-container" id="swiper-container2">
+        <div class="swiper-wrapper" id="in-2">
+            <volist name="product_cate" id="vo" key="k">
+                <div class="swiper-slide <if condition = '$k eq 1 '>  active-nav </if>"><span>{$vo['name']}</span></div>
+            </volist>
+        </div>
+    </div>
+    <div class="in-30"></div>
+    <div class="swiper-container" id="swiper-container3">
+
+        <div class="swiper-wrapper">
+            <volist name="product_cate" id="vo" key="k">
+                <div class="swiper-slide gdka">
+                    <div class="ihd ihd-p7 swiper-container" id="nhb-{$k}">
+                        <div class="swiper-wrapper">
+                            <volist name="vo['product']" id="voo">
+                            <div class="swiper-slide"><a href="{:U($vo['link'],array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><img src="{$voo['image_path']}" alt="美彤内衣"></a></div>
+                            </volist>
+                        </div>
+                        <div class="hd-no"></div>
+                    </div>
+                    <volist name="vo['product2']" id="vooo" key="kk">
+                    <div class="ihd ihd-p{$kk}"><a href="{:U($vo['link'],array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><img src="{$vooo['image_path']}" alt="美彤内衣加盟"></a></div>
+                    </volist>
+                        <div class="clear"></div>
+                </div>
+            </volist>
+        </div>
+
+    </div>
+
+    <div class="m-pic"><a href="/product/index.html"></a></div>
+    <div class="ad1"><a href="javascript:void(0)" class="zxly"><img src="__PUBLIC__/templets/img/ad-2.png" alt="咨询窗口"></a></div>
+
+    <div class="wb-dp" id="in-3">
+        <div class="wb-dp-t">终端店铺形象的展示</div>
+        <div class="swiper-container wb-dp-i">
+            <div class="swiper-wrapper">
+                <volist name="store" id="vo">
+                     <div class="swiper-slide"><img src="{$vo.image_path}" alt="美彤内衣沙井直营店"></div>
+                </volist>
+            </div>
+        </div>
+        <div class="wb-dp-jt">
+            <a href="javascript:void(0)" class="arrow-left"><img src="__PUBLIC__/templets/img/dp-l.png"></a>
+            <a href="javascript:void(0)" class="arrow-right"><img src="__PUBLIC__/templets/img/dp-r.png"></a>
+        </div>
+    </div>
+
+    <div class="web-n1000">
+        <div class="xw-lisn">
+        <volist name="latest" id="vo">
+            <div class="nbb-li"><a href="{:U('Latest/detail',array('id'=>$vo['id'],'channel_id'=>$vo['sid']))}"><span class="icon-right-dir"></span><span class="w-titm">[{$vo['t']}]</span>{$vo['title']}<div class="clear"></div></a></div>
+        </volist>
+
+            <div class="fengge_10"></div>
+            <div class="web-1000 te-cen">
+                <div align="right" class="btrw-l" id="fenye">
+                    <a href="{:U('Latest/index')}" class="curr" style="width:160px;">查看更多资讯</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <include file="Public/footer" />
+    <!--End footer-->
+
+
+
+    <!--右侧圆点-->
+    <div class="cki-yd">
+        <a href="javascript:void(0)" diu="in-0" rel="nofollow"></a>
+        <a href="javascript:void(0)" diu="in-1" rel="nofollow"></a>
+        <a href="javascript:void(0)" diu="in-2" rel="nofollow"></a>
+        <a href="javascript:void(0)" diu="in-3" rel="nofollow"></a>
+        <a href="javascript:void(0)" diu="in-4" rel="nofollow"></a>
+    </div>
+    <!--右侧圆点-->
+
+    <!-- js of index -->
+    <script>
+        window.onload = function () {
+            var mySwiperdma = new Swiper('#vmaus', {
+                paginationClickable: true,
+                slidesPerView: 'auto'
+            })
+
+
+            var mySwiper1 = new Swiper('#nhb-1', {
+                pagination: '#nhb-1 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //  paginationBulletRender: function (index, className) {
+                //      return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //    }
+
+            })
+
+
+            var mySwiper2 = new Swiper('#nhb-2', {
+                pagination: '#nhb-2 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //  paginationBulletRender: function (index, className) {
+                //      return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //  }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-3', {
+                pagination: '#nhb-3 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-4', {
+                pagination: '#nhb-4 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-5', {
+                pagination: '#nhb-5 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-6', {
+                pagination: '#nhb-6 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-7', {
+                pagination: '#nhb-7 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+            var mySwiper3 = new Swiper('#nhb-8', {
+                pagination: '#nhb-8 .hd-no',
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+                //paginationBulletRender: function (index, className) {
+                //        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                //   }
+
+            })
+
+
+            //===========================================
+
+
+            var tabsSwiper = new Swiper('#swiper-container3', {
+                speed: 500,
+                onSlideChangeStart: function () {
+                    $("#swiper-container2 .swiper-slide.active-nav").removeClass('active-nav')
+                    $("#swiper-container2 .swiper-slide").eq(tabsSwiper.activeIndex).addClass(
+                        'active-nav')
+                }
+            })
+            $("#swiper-container2 .swiper-slide").on('touchstart mousedown', function (fe) {
+                fe.preventDefault()
+                $("#swiper-container2 .swiper-slide.active-nav").removeClass('active-nav')
+                $(this).addClass('active-nav')
+                tabsSwiper.swipeTo($(this).index())
+            })
+            $("#swiper-container2 .swiper-slide").click(function (de) {
+                de.preventDefault()
+            })
+
+            //===========================================
+            var mySwiperd = new Swiper('#swiper-container2', {
+                paginationClickable: true,
+                slidesPerView: 'auto'
+            })
+
+
+            var dppic = new Swiper('.wb-dp-i', {
+                paginationClickable: true,
+                loop: true,
+                autoplay: 5000,
+                speed: 800
+
+            })
+
+
+            $('.arrow-left').on('click', function (e) {
+                e.preventDefault()
+                dppic.swipePrev()
+            })
+            $('.arrow-right').on('click', function (e) {
+                e.preventDefault()
+                dppic.swipeNext()
+            })
+
+        }
+
+        function ta(obj) {
+            var val = $(obj).val().length;
+            if (val > 11) {
+                alert("至多输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+    </script>
+
+    <!-- common js -->
+    <script>
+        function sq(obj) {
+            var val = $(obj).val().length;
+            if (val < 11) {
+                alert("至少输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+
+        function ta(obj) {
+            var val = $(obj).val().length;
+            if (val > 11) {
+                alert("至多输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+    </script>
+</body>
+
+</html>

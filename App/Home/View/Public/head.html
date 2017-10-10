@@ -1,0 +1,54 @@
+
+<!-- common -->
+<link href="__PUBLIC__/templets/hd/idangerous.swiper.css" rel="stylesheet">
+<script src="__PUBLIC__/templets/hd/idangerous.swiper-2.1.min.js"></script>
+<link href="__PUBLIC__/templets/hd/slider-pro.css" rel="stylesheet">
+<script src="__PUBLIC__/templets/hd/jquery.sliderPro.min.js"></script>
+
+<link href="__PUBLIC__/templets/font/css/fontello.css" rel="stylesheet">
+<link href="__PUBLIC__/templets/font/css/animation.css" rel="stylesheet">
+<link href="__PUBLIC__/templets/css/PublicCss.css" rel="stylesheet" />
+<link href="__PUBLIC__/templets/css/som.css" rel="stylesheet" />
+<link href="__PUBLIC__/templets/css/examples.css" rel="stylesheet" />
+<script src="__PUBLIC__/templets/js/ny.js"></script>
+<script src="__PUBLIC__/templets/js/pic.js"></script>
+<script src="__PUBLIC__/templets/js/jquery.imgscroll.min.js"></script>
+
+<!-- common media css -->
+<style>
+    @media only screen and (max-width:1000px) {
+        #qiao-wrap,
+        #BD_QIAO_WEBIM_LITE_WRAP {
+            display: none;
+        }
+        .qq_bt {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body id="in-0">
+<!--Top-->
+<div class="pc-167"></div>
+<div class="web-top">
+    <div class="web-logo">
+        <h1><a href="{:U('Index/index')}"><img src="__PUBLIC__/templets/UploadFiles/logo.png" alt="美彤内衣集合店"></a></h1>
+    </div>
+    <div class="web-dh" id="maus">
+        <volist name="channel" id="vo">
+            <div class='swiper-slide'>
+                <a href="{:U($vo['link'],array('id'=>$vo['id'],'pid'=>$vo['pid']))}" class="dh1a soa" idc="dh-3">{$vo.name}</a>
+                <div class="dh-xl">
+                    <volist name="vo.child" id="voo">
+                        <a href="{:U($voo['link'],array('id'=>$voo['id'],'pid'=>$voo['pid']))}">{$voo.name}</a>
+                    </volist>
+
+                </div>
+            </div>
+        </volist>
+        </div>
+
+    </div>
+</div>
+<!--Top-->

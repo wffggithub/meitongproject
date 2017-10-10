@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>{$Think.CONFIG.title}-招商加盟</title>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{$Think.CONFIG.description}" />
+    <meta name="keywords" content="{$Think.CONFIG.keywords}" />
+
+    <script src="__PUBLIC__/templets/js/jquery.js"></script>
+    <script src="__PUBLIC__/templets/js/common.js"></script>
+    <script src="__PUBLIC__/templets/js/jquery-1.11.0.min.js"></script>
+
+    <include file="Public/head" />
+    <!--Top-->
+
+    <!--pc-->
+    <!--<volist name="infoPC" id="vo">
+        <div class="banner"><img src="{$vo['image_path']}" class="pc-business" /></div>
+    </volist>-->
+    <!--pc-->
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/1.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/2.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/3.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/4.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/5.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/6.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/7.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/8.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/9.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/10.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/11.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/12.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/13.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/14.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/15.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/16.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/17.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/18.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/19.jpg" class="pc-business" /></div>
+    <div class="banner"><img src="__PUBLIC__/templets/UploadImages/join/pc/20.jpg" class="pc-business" /></div>
+    <!--pc-->
+
+
+    <!--pc-->
+
+    <!-- md -->
+   <!-- <volist name="infoM" id="voo">
+    <div class="md_tel"><img src="{$vo0['image_path']}" class="tel-business" width="100%" /></div>
+    </volist>-->
+
+    <div style="clear: both;"></div>
+    <!-- md -->
+
+    <!--footer-->
+    <include file="Public/footer" />
+    <!--End footer-->
+
+    <!-- common js -->
+    <script type="text/javascript">
+        function sq(obj) {
+            var val = $(obj).val().length;
+            if (val < 11) {
+                alert("至少输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+
+        function ta(obj) {
+            var val = $(obj).val().length;
+            if (val > 11) {
+                alert("至多输入11个字符！");
+                $(obj).val($(obj).val().substring(0, 11))
+            }
+        }
+    </script>
+    <!-- common js -->
+
+</body>
+
+</html>
